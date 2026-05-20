@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 220px;
+      background: #3e0a1a;
+      color: #f5e6ea;
+      font-family: 'Courier New', monospace;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .header img {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+    }
+    .logo {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #f2a0b8;
+    }
+    .logo span { color: #f5e6ea; }
+    .sub {
+      font-size: 9px;
+      color: #c07080;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      margin-top: 2px;
+    }
+    .status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .status-dot { font-size: 10px; letter-spacing: 1px; }
+    .status-dot.on  { color: #4dffa0; }
+    .status-dot.off { color: #c07080; }
+    button {
+      width: 100%;
+      padding: 9px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      margin-bottom: 8px;
+      border: none;
+    }
+    #toggleBtn { background: #f2a0b8; color: #3e0a1a; }
+    #toggleBtn.off {
+      background: rgba(180,60,90,0.2);
+      color: #c07080;
+      border: 1px solid rgba(180,60,90,0.3);
+    }
+    #resetBtn {
+      background: none;
+      border: 1px solid rgba(180,60,90,0.35);
+      color: #c07080;
+    }
+    #resetBtn:hover { color: #f5e6ea; border-color: #c07080; }
+    .note {
+      font-size: 9px;
+      color: #c07080;
+      line-height: 1.6;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(180,60,90,0.3);
+    }
+    .note a { color: #f2a0b8; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icon48.png" alt="DeltaScout">
+    <div class="logo">Delta<span>Scout</span></div>
+  </div>
+  <div class="sub">TRADINGVIEW LIVE ANALYZER</div>
+  <div class="status-row">
+    <span class="status-dot on" id="statusDot">● ACTIVE</span>
+    <span style="font-size:9px; color:#c07080">Open a TradingView chart</span>
+  </div>
+  <button id="toggleBtn">⏸ PAUSE</button>
+  <button id="resetBtn">↺ RESET TICKS</button>
+  <div class="note">
+    Reads the last-traded price from TradingView every 200ms.<br><br>
+    Drag the overlay panel anywhere on the chart.<br><br>
+    <a href="https://www.tradingview.com/chart/" target="_blank">Open TradingView →</a>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

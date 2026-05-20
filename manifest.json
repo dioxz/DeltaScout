@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "DeltaScout - TradingView Live Analyzer",
+  "version": "1.0.0",
+  "description": "Reads live price ticks from TradingView and overlays next-tick probability prediction on the chart.",
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["https://www.tradingview.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.tradingview.com/chart/*"],
+      "js": ["content.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
