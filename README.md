@@ -13,6 +13,9 @@ Every 200ms it reads the current price. If it changed, that’s a new tick. Over
 
 From that it calculates a blended directional probability: *60% weight on the full 5-minute tick ratio, **40% weight on the last 30 seconds* to capture short-term momentum shifts. The result is a live % chance that the next tick goes up or down, updating in real time as the market moves.
 
+## Note 
+### This is a lightweight version of the full system, which is why it runs as a browser extension instead of a standalone platform. The full version is still in development, so this build focuses on delivering the core functionality in a fast, accessible way while the main architecture is being worked on.
+
 ## Features
 
 - *Live tick reading* from TradingView’s DOM at 200ms intervals
@@ -81,3 +84,5 @@ DeltaScout is an educational and analytical tool. It does not constitute financi
 MIT License. Free to use, modify, and distribute.
 
 Built for traders who want to see what the price is actually doing, not what a 14-period RSI thinks it might do.
+
+
